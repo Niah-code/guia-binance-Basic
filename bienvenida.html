@@ -3,33 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso Exclusivo | Guía Binance</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400&display=swap" rel="stylesheet">
+    <title>Bienvenida | Guía Binance</title>
     <style>
-        :root { --azul: #0B1226; --oro: #D4AF37; --blanco: #FDFBF7; }
-        body { font-family: 'Lora', serif; background-color: var(--azul); display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .card { background: var(--blanco); padding: 40px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: 85%; max-width: 400px; border-top: 5px solid var(--oro); }
-        h1 { font-family: 'Playfair Display', serif; color: var(--azul); margin-bottom: 10px; font-size: 1.8rem; }
-        input { width: 100%; padding: 12px; margin: 20px 0; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-family: 'Lora', serif; }
-        button { background: var(--oro); color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; text-transform: uppercase; letter-spacing: 1px; }
+        body { font-family: 'Lora', serif; background: #FDFBF7; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #D4AF37; border-radius: 8px; }
+        button { background: #0B1226; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>Bienvenido</h1>
-        <p>Ingresa tu nombre para comenzar tu guía personalizada de Binance.</p>
-        <input type="text" id="userName" placeholder="Nombre y Apellido">
-        <button onclick="comenzar()">Entrar a la Guía</button>
+        <h1>¡Bienvenida!</h1>
+        <p>Ingresa tu nombre para personalizar tu guía:</p>
+        <input type="text" id="userName" placeholder="Tu nombre aquí...">
+        <button onclick="guardarYIr()">Entrar a la Guía</button>
     </div>
 
     <script>
-        function comenzar() {
+        function guardarYIr() {
             const nombre = document.getElementById('userName').value;
-            if(nombre.trim() !== "") {
-                localStorage.setItem('user_name', nombre);
-                window.location.href = "index.html"; 
+            if(nombre) {
+                localStorage.setItem('user_name', nombre); // Guarda el nombre
+                window.location.href = "index.html"; // Te manda a la guía
             } else {
-                alert("Por favor, ingresa tu nombre para continuar.");
+                alert("Escribe tu nombre primero");
             }
         }
     </script>
